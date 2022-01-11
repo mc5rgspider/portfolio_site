@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'quote_generator',
+    'portfolio',
+    'blog',
 ]
 
 MIDDLEWARE = [
