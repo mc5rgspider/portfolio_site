@@ -15,15 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from quote_generator import views
+#from quote_generator import views
 from django.conf import settings
 from django.conf.urls.static import static
+
+#Added for exchange_rate app
+from exchange_rate import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', views.home, name='home'),
 
     path('', views.index, name='index'),
+    
+    #Added for exchange_rate app
+    path('exchange_rate/', views.index, name='index'),
     
     #path('about/', views.about, name='about'),
 ]
