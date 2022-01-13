@@ -27,11 +27,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-
-    #path('', views.index, name='index'),
     
     #Added for exchange_rate app
     #path('exchange_rate/', views.index, name='index'),
+    #path('', views.index, name='index'),
     
     #path('about/', views.about, name='about'),
     path('blog/', include('blog.urls')),
