@@ -3,25 +3,120 @@
 {% block content %}
 
 {% load static %}
+<!--
+  <div style="background-image: url(static/portfolio/main.jpg);width: 100%;height: 100%;background-size: contain;background-repeat: no-repeat;">
+  <div style="background: black;color: red;">NANAMI PORTFOLIO</div>
 
-<div class="row justify-content-center my-3">
-    <div class="col-5">
-        <img src="{% static 'portfolio/main.jpg' %}" width="300" height="300" class="img-fluid">
-    </div>
 </div>
 
-<div class="row justify-content-center mb-2">
-    <div class="col-md-9 text-center">
-      <h1 id="hometext" class="font-weight-bold">General Kenobi</h1>
+-->
+<style> 
+
+  @keyframes example {
+    from {background-image: url('static/portfolio/maple_bg00.jpg');}
+    to {background-image: url('static/portfolio/bgbgbg.jpg');}
+  }
+</style>
+
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('static/portfolio/bgbgbg.jpg');
+      background-size: cover;
+      height: 80%;
+      overflow: hidden;
+      animation-name: example;
+      animation-duration: 10s;
+    ">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3" 
+          style="position: absolute;
+          top: 320px;
+          left: 360px;
+          ">Nanami Inaba</h1>
+
+            <h4 class="mb-3"
+            style="position: absolute;
+          top: 450px;
+          left: 290px;">John Jay College of Criminal Justice</h4>
+
+            <p class="mb-3"
+            style="position: absolute;
+          top: 510px;
+          left: 290px;">COMPUTER SCIENCE AND INFORMATION SECURITY</p>
+
+          <a class="btn btn-outline-light btn-lg" role="button" href="{% url 'blog:all_blogs' %}"
+          style="position: absolute;
+          top: 600px;
+          left: 400px;">Go to Blogs</a>
+
+          
+        </div>
+      </div>
     </div>
   </div>
 
-  <h2 class="mt-5">Portfolio</h2>
+  
 
-  <hr>
-  <div class="row">
+<!-- Connection Image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('static/portfolio/con_bg.jpg');
+      background-size: cover;
+      height: 50%;
+      overflow: hidden;
+      border-style: solid hidden hidden hidden;
+      border-width: 15px;
+      border-color: #8b834d;
+      background-repeat: no-repeat;
+    ">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          
+          <h1 class="mb-3" style="background-color: rgba(0, 0, 0, 0.6);">Frontend Projects</h1>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<!--
+<div class="row justify-content-center my-3" style="background-image: url(static/portfolio/main.jpg);">
+    <div class="col-5">
+
+      <img src="{% static 'portfolio/main.jpg' %}" width="100%" height="100%" style="border:5px;">
+    </div>
+</div>
+-->
+
+
+<!--
+  <h2 class="mt-5" style="
+  background: #000000;
+  color: #8b834d">Portfolio</h2>
+-->
+
+  <!-- <hr> -->
+  <div class="row" style="
+  background: #000000;">
+
+  <div class="row justify-content-center mb-2" style="
+background: #000000;
+color: #8b834d;">
+
+    <!--
+    <div class="col-md-9 text-center">
+      <h1 id="hometext" class="font-weight-bold">Projects</h1>
+    </div>
+  -->
+  </div>
+
+    <hr>
     {% for project in projects %}
-    <div class="col-lg-4 col-md-6">
+    <div class="col-lg-4 col-md-6" style="color: #8b834d">
   
       {% if project.url %}
       <a href="{{ project.url }}">
@@ -31,11 +126,41 @@
   
       <img src="{{ project.image.url }}" class="img-fluid mb-2">
       {% endif %}
-      <h3>{{ project.title }}</h3>
+      <h3 style="text-decoration: underline;">{{ project.title }}</h3>
       <p>{{ project.description }}</p>
   
     </div>
     {% endfor %}
   </div>
   
+
+
+
+  <!-- Footer Image -->
+
+  <div
+  class="p-5 text-center bg-image"
+  style="
+    background-image: url('static/portfolio/con_bg_footer.jpeg');
+    background-size: cover;
+    height: 60%;
+    overflow: hidden;
+    
+    background-repeat: no-repeat;
+  ">
+  <div class="mask">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
   {% endblock %}
+
+
+  
